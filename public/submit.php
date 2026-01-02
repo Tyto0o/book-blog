@@ -1,6 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
 
-$name = $_POST['name'];
+$name = $_SESSION['user'];
 $message = $_POST['message'];
 $parent_id = isset($_POST['parent_id']) && $_POST['parent_id'] !== '' ? $_POST['parent_id'] : NULL;
 

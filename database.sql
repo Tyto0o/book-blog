@@ -13,7 +13,6 @@ CREATE TABLE messages (
     message TEXT NOT NULL,
     parent_id INT DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (parent_id) REFERENCES messages(id) ON DELETE CASCADE,
-    INDEX idx_parent_id (parent_id),
-    INDEX idx_created_at (created_at)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+    -- Powoduje usunięcie wszystkich odpowiedzi, gdy usuwana jest wiadomość nadrzędna
+    FOREIGN KEY (parent_id) REFERENCES messages(id) ON DELETE CASCADE
+) CHARSET=utf8mb4;
