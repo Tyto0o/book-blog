@@ -12,6 +12,7 @@ CREATE TABLE messages (
     name VARCHAR(255) NOT NULL,
     message TEXT NOT NULL,
     parent_id INT DEFAULT NULL,
+    book_id INT DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     -- Powoduje usunięcie wszystkich odpowiedzi, gdy usuwana jest wiadomość nadrzędna
     FOREIGN KEY (parent_id) REFERENCES messages(id) ON DELETE CASCADE
