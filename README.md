@@ -1,56 +1,56 @@
-# 📚 BookBlog - Blog o Książkach Psychologicznych
+# 📚 BookBlog - Psychology Books Blog
 
-> Nowoczesna platforma do dzielenia się opiniami o książkach z zakresu psychologii i samorozwoju
+> A modern platform for sharing opinions about psychology and self-development books
 
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## 🎯 O Projekcie
+## 🎯 About the Project
 
-BookBlog to minimalistyczna aplikacja webowa stworzona dla miłośników książek psychologicznych i o samorozwoju. Platforma umożliwia użytkownikom przeglądanie recenzji, dodawanie własnych opinii oraz prowadzenie dyskusji w formie zagnieżdżonych komentarzy.
+BookBlog is a minimalist web application created for lovers of psychology and self-development books.  The platform allows users to browse reviews, add their own opinions, and engage in discussions through a nested comment system.
 
-> 🎓 **Projekt akademicki** - Aplikacja powstała w ramach przedmiotu **Programowanie Sieciowe** na studiach.
+> 🎓 **Academic Project** - This application was created as part of the **Network Programming** course at university.
 
-### ✨ Główne Funkcjonalności
+### ✨ Key Features
 
-- 📖 **Artykuł edukacyjny** - Szczegółowy artykuł o korzyściach płynących z czytania
-- 📝 **System opinii** - Dodawanie opinii o 5 wybranych książkach
-- 💬 **Komentarze zagnieżdżone** - Wielopoziomowe odpowiedzi na komentarze
-- 👥 **Autorzy** - Prezentacja popularnych autorów książek o samorozwoju
-- 💭 **Cytaty** - Inspirujące cytaty z książek
-- 🔐 **System logowania** - Prosty mechanizm uwierzytelniania
-- ⚡ **AJAX** - Dodawanie komentarzy bez przeładowania strony
-- 🕐 **Czas względny** - Wyświetlanie czasu w formacie "X minut temu"
+- 📖 **Educational Article** - Detailed article about the benefits of reading
+- 📝 **Review System** - Add reviews for 5 selected books
+- 💬 **Nested Comments** - Multi-level comment replies
+- 👥 **Authors** - Showcase of popular self-development book authors
+- 💭 **Quotes** - Inspiring quotes from books
+- 🔐 **Login System** - Simple authentication mechanism
+- ⚡ **AJAX** - Add comments without page reload
+- 🕐 **Relative Time** - Display time in "X minutes ago" format
 
-## 🛠️ Technologie
+## 🛠️ Technologies
 
 - **Backend:** PHP 7.4+
-- **Baza danych:** MySQL 5.7+
+- **Database:** MySQL 5.7+
 - **Frontend:** Vanilla JavaScript (ES6+)
-- **Style:** Custom CSS (bez frameworków)
-- **Serwer:** Apache (XAMPP/LAMPP)
+- **Styles:** Custom CSS (no frameworks)
+- **Server:** Apache (XAMPP/LAMPP)
 
-## 📋 Wymagania Systemowe
+## 📋 System Requirements
 
-Przed instalacją upewnij się, że masz zainstalowane:
+Before installation, make sure you have: 
 
 - **PHP** >= 7.4
 - **MySQL** >= 5.7
-- **Apache** (lub inny serwer WWW)
-- **XAMPP/LAMPP** (zalecane) lub
-- **MAMP** (dla macOS)
+- **Apache** (or other web server)
+- **XAMPP/LAMPP** (recommended) or
+- **MAMP** (for macOS)
 
-## 🚀 Instalacja
+## 🚀 Installation
 
-### 1. Sklonuj repozytorium
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/yourusername/book-blog.git
 cd book-blog
 ```
 
-### 2. Uruchom serwer (XAMPP/LAMPP)
+### 2. Start the server (XAMPP/LAMPP)
 
 **Linux:**
 ```bash
@@ -59,7 +59,7 @@ sudo /opt/lampp/lampp start
 
 **Windows:**
 ```
-Uruchom XAMPP Control Panel i wystartuj Apache i MySQL
+Launch XAMPP Control Panel and start Apache and MySQL
 ```
 
 **macOS:**
@@ -67,31 +67,31 @@ Uruchom XAMPP Control Panel i wystartuj Apache i MySQL
 sudo /Applications/XAMPP/xamppfiles/xampp start
 ```
 
-### 3. Utwórz bazę danych
+### 3. Create the database
 
 ```bash
 # Linux
 /opt/lampp/bin/mysql -u root < database.sql
 
-# Windows (w cmd z folderu XAMPP/mysql/bin)
-mysql -u root < ścieżka/do/database.sql
+# Windows (in cmd from XAMPP/mysql/bin folder)
+mysql -u root < path/to/database.sql
 
 # macOS
 /Applications/XAMPP/xamppfiles/bin/mysql -u root < database.sql
 ```
 
-Lub ręcznie w phpMyAdmin:
-1. Otwórz http://localhost/phpmyadmin
-2. Utwórz bazę danych `messages`
-3. Zaimportuj plik `database.sql`
+Or manually in phpMyAdmin:
+1. Open http://localhost/phpmyadmin
+2. Create database `messages`
+3. Import the `database.sql` file
 
-### 4. Konfiguracja połączenia z bazą danych
+### 4. Configure database connection
 
-Sprawdź ścieżkę do socketu MySQL w plikach:
+Check the MySQL socket path in files:
 - `public/pages/book.php`
 - `public/submit.php`
 
-Domyślna konfiguracja:
+Default configuration:
 ```php
 $conn = new mysqli(
     "localhost",  // host
@@ -103,115 +103,115 @@ $conn = new mysqli(
 );
 ```
 
-**Ścieżki socketów:**
+**Socket paths:**
 - Linux: `/opt/lampp/var/mysql/mysql.sock`
 - macOS: `/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock`
-- Windows: pozostaw `null` lub usuń parametr
+- Windows: leave `null` or remove the parameter
 
-### 5. Uruchom aplikację
+### 5. Run the application
 
-Skopiuj folder projektu do katalogu htdocs:
+Copy the project folder to the htdocs directory: 
 
 ```bash
 # Linux
 sudo cp -r book-blog /opt/lampp/htdocs/
 
 # Windows
-# Skopiuj do C:\xampp\htdocs\
+# Copy to C:\xampp\htdocs\
 
 # macOS
 sudo cp -r book-blog /Applications/XAMPP/htdocs/
 ```
 
-Otwórz przeglądarkę: `http://localhost/book-blog/public/`
+Open your browser: `http://localhost/book-blog/public/`
 
-## 📁 Struktura Projektu
+## 📁 Project Structure
 
 ```
 book-blog/
-├── database.sql              # Schemat bazy danych
-├── README.md                 # Dokumentacja
-└── public/                   # Publiczny katalog
-    ├── index.php            # Główny punkt wejścia (przekierowanie)
-    ├── login.php            # Strona logowania
-    ├── logout.php           # Wylogowanie
-    ├── submit.php           # Obsługa formularzy
-    ├── script.js            # JavaScript (AJAX, UI)
-    ├── styles.css           # Style CSS
-    ├── images/              # Okładki książek
+├── database.sql              # Database schema
+├── README.md                 # Documentation
+└── public/                   # Public directory
+    ├── index.php            # Main entry point (redirect)
+    ├── login. php            # Login page
+    ├── logout.php           # Logout
+    ├── submit.php           # Form handling
+    ├── script. js            # JavaScript (AJAX, UI)
+    ├── styles.css           # CSS styles
+    ├── images/              # Book covers
     │   ├── atomic-habits.jpg
     │   ├── thinking-fast-and-slow.jpg
     │   ├── the-power-of-now.jpeg
     │   ├── mans-search-for-meaning.jpg
     │   └── the-5am-club.jpg
-    ├── components/          # Komponenty wielokrotnego użytku
-    │   └── nav.php         # Nawigacja
-    └── pages/               # Podstrony
-        ├── home.php        # Strona główna (artykuł)
-        ├── opinions.php    # Lista książek
-        ├── book.php        # Szczegóły i komentarze
-        ├── authors.php     # Autorzy
-        └── quotes.php      # Cytaty
+    ├── components/          # Reusable components
+    │   └── nav.php         # Navigation
+    └── pages/               # Subpages
+        ├── home. php        # Home page (article)
+        ├── opinions.php    # Book list
+        ├── book.php        # Details and comments
+        ├── authors.php     # Authors
+        └── quotes.php      # Quotes
 ```
 
-## 💾 Struktura Bazy Danych
+## 💾 Database Structure
 
-### Tabela: `messages`
+### Table: `messages`
 
-| Kolumna | Typ | Opis |
+| Column | Type | Description |
 |---------|-----|------|
-| id | INT (PK, AI) | Unikalny identyfikator |
-| name | VARCHAR(255) | Nazwa użytkownika |
-| message | TEXT | Treść komentarza |
-| parent_id | INT (FK, NULL) | ID komentarza nadrzędnego |
-| book_id | INT (NULL) | ID książki |
-| created_at | TIMESTAMP | Data utworzenia |
+| id | INT (PK, AI) | Unique identifier |
+| name | VARCHAR(255) | Username |
+| message | TEXT | Comment content |
+| parent_id | INT (FK, NULL) | Parent comment ID |
+| book_id | INT (NULL) | Book ID |
+| created_at | TIMESTAMP | Creation date |
 
-## 🎨 Funkcjonalności UI
+## 🎨 UI Features
 
-### Strona główna
-- Rozbudowany artykuł o korzyściach czytania
-- Badania naukowe i cytaty ekspertów
-- Praktyczne wskazówki
+### Home page
+- Comprehensive article about the benefits of reading
+- Scientific research and expert quotes
+- Practical tips
 
-### Opinie o książkach
-- 5 książek z okładkami
-- Możliwość dodawania opinii
-- Zagnieżdżone komentarze
-- Dynamiczne pokazywanie/ukrywanie odpowiedzi
+### Book Reviews
+- 5 books with covers
+- Ability to add opinions
+- Nested comments
+- Dynamic show/hide replies
 
-### Autorzy
-- 6 popularnych autorów
-- Krótkie biografie
-- Informacje o ich wkładzie
+### Authors
+- 6 popular authors
+- Brief biographies
+- Information about their contributions
 
-### Cytaty
-- 10 inspirujących cytatów
-- Źródła i autorzy
+### Quotes
+- 10 inspiring quotes
+- Sources and authors
 
-## 🔐 Logowanie
+## 🔐 Login
 
-System nie wymaga hasła - wystarczy podać login. To uproszczona wersja do celów demonstracyjnych.
+The system doesn't require a password - just provide a username. This is a simplified version for demonstration purposes.
 
-**Domyślne logowanie:**
-- Login: dowolny
-- Hasło: dowolne
+**Default login:**
+- Username: any
+- Password: any
 
-## 🚧 Znane Ograniczenia
+## 🚧 Known Limitations
 
-- Brak weryfikacji hasła
-- Brak systemu rejestracji
-- Dane książek są hardcoded (nie w bazie)
-- Brak panelu admina
-- Brak edycji/usuwania komentarzy
+- No password verification
+- No registration system
+- Book data is hardcoded (not in database)
+- No admin panel
+- No edit/delete for comments
 
-## 🤝 Wkład w Projekt
+## 🤝 Contributing
 
-Pull requesty są mile widziane! Przed dodaniem dużych zmian, otwórz issue aby przedyskutować propozycje.
+Pull requests are welcome! Before adding major changes, please open an issue to discuss your proposals.
 
-## 📄 Licencja
+## 📄 License
 
-MIT License - możesz swobodnie używać tego projektu.
+MIT License - you are free to use this project.
 
 ---
 
